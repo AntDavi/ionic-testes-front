@@ -1,0 +1,62 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-card class="ion-padding">
+        <ngx-datatable 
+          #table
+          class="material" 
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [loadingIndicator]="loadingIndicator"
+          [scrollbarH]="true" 
+
+          [limit]="5" 
+          [rows]="rows"
+          [reorderable]="true"
+        >
+          <ngx-datatable-column prop="id">
+            <ng-template 
+              let-column="column" 
+              ngx-datatable-header-template 
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">ID</span>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="name">
+            <ng-template 
+              let-column="column" 
+              ngx-datatable-header-template 
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">Nome</span>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="gender">
+            <ng-template 
+              let-column="column" 
+              ngx-datatable-header-template 
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">Gênero</span>
+            </ng-template>
+                <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value === 'Masculino' ? 'Homem' : 'Mulher'}}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="company">
+            <ng-template 
+              let-column="column" 
+              ngx-datatable-header-template 
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">Empresa</span>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
