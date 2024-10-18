@@ -1,0 +1,7 @@
+{
+  "name": "ionic-testes-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
